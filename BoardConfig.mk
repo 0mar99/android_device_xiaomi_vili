@@ -18,6 +18,9 @@ TARGET_BOOTLOADER_BOARD_NAME := vili
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/hidl/manifest.xml
 
+# Firmware
+-include vendor/xiaomi/vili-firmware/BoardConfigVendor.mk
+
 # Kernel
 TARGET_KERNEL_CONFIG += vendor/vili_QGKI.config
 
