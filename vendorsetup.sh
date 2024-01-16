@@ -50,4 +50,13 @@ patch -p1 <0001-SettingsProvider-Resolve-google-gms-configurator-denials.patch
 patch -p1 <0002-Remove-read-device-config-checks.patch
 cd ../..
 
+# Optimization
+echo 'Adding optimization patch'
+cd frameworks/base
+wget https://raw.githubusercontent.com/xiaomi-haydn-devs/Patch-Haydn/14/Optimization/0001-BootReceiver-Return-early-if-trace-pipe-doesnt-exists.patch
+wget https://raw.githubusercontent.com/xiaomi-haydn-devs/Patch-Haydn/14/Optimization/0002-Remove-USB-charging-notification.patch
+patch -p1 <0001-BootReceiver-Return-early-if-trace-pipe-doesnt-exists.patch
+patch -p1 <0002-Remove-USB-charging-notification.patch
+cd ../..
+
 echo 'delete vendorsetup.sh from device tree once this is done'
