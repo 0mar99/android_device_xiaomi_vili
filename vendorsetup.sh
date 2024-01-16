@@ -70,4 +70,11 @@ wget https://raw.githubusercontent.com/xiaomi-haydn-devs/Patch-Haydn/14/Gms/0001
 patch -p1 <0001-SettingsProvider-Resolve-google-gms-configurator-denials.patch
 cd ../..
 
+# Optimization
+echo 'Adding optimization patch'
+cd frameworks/base
+wget https://raw.githubusercontent.com/xiaomi-haydn-devs/Patch-Haydn/14/Optimization/0001-BootReceiver-Return-early-if-trace-pipe-doesnt-exists.patch
+patch -p1 <0001-BootReceiver-Return-early-if-trace-pipe-doesnt-exists.patch
+cd ../..
+
 echo 'delete vendorsetup.sh from device tree once this is done'
