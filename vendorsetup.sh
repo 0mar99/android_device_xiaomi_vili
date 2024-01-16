@@ -34,4 +34,11 @@ echo 'Cloning private keys'
 rm -rf vendor/derp/signing
 git clone https://gitlab.com/0mar99/vendor_derp_signing.git vendor/derp/signing
 
+# Leica patch
+echo 'Adding Leica camera patch'
+cd frameworks/base
+wget https://raw.githubusercontent.com/xiaomi-haydn-devs/Patch-Haydn/14/Leicamera/0001-Add-backwards-compatible-CaptureResultExtras-constructor.patch
+patch -p1 <0001-Add-backwards-compatible-CaptureResultExtras-constructor.patch
+cd ../..
+
 echo 'delete vendorsetup.sh from device tree once this is done'
