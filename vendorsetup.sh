@@ -34,4 +34,11 @@ echo 'Cloning display HAL'
 rm -rf hardware/qcom-caf/sm8350/display
 git clone https://github.com/0mar99/android_hardware_qcom-caf_display_sm8350.git hardware/qcom-caf/sm8350/display
 
+# Leica patch
+echo 'Adding Leica camera patch'
+cd frameworks/base
+wget https://raw.githubusercontent.com/xiaomi-haydn-devs/Patch-Haydn/14/Leicamera/0001-Add-backwards-compatible-CaptureResultExtras-constructor.patch
+patch -p1 <0001-Add-backwards-compatible-CaptureResultExtras-constructor.patch
+cd ../..
+
 echo 'delete vendorsetup.sh from device tree once this is done'
