@@ -34,4 +34,11 @@ echo 'Cloning display HAL'
 rm -rf hardware/qcom-caf/sm8350/display
 git clone https://github.com/0mar99/android_hardware_qcom-caf_display_sm8350.git hardware/qcom-caf/sm8350/display
 
+# VoNR
+echo 'Enabling VoNR by default'
+cd frameworks/base
+wget https://raw.githubusercontent.com/xiaomi-haydn-devs/Patch-Haydn/14/VoNR/0001-Enable-VoNR-by-default.patch
+patch -p1 <0001-Enable-VoNR-by-default.patch
+cd ../..
+
 echo 'delete vendorsetup.sh from device tree once this is done'
