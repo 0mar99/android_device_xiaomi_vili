@@ -55,6 +55,12 @@ wget https://raw.githubusercontent.com/xiaomi-haydn-devs/Patch-Haydn/14/Dolby/00
 wget https://raw.githubusercontent.com/xiaomi-haydn-devs/Patch-Haydn/14/Dolby/0004-Import-Dolby-Effects-initialization.patch
 patch -p1 <0003-media-OMXStore-Import-loading-libstagefrightdolby.patch
 patch -p1 <0004-Import-Dolby-Effects-initialization.patch
+
+# VoNR
+echo 'Enabling VoNR by default'
+cd frameworks/base
+wget https://raw.githubusercontent.com/xiaomi-haydn-devs/Patch-Haydn/14/VoNR/0001-Enable-VoNR-by-default.patch
+patch -p1 <0001-Enable-VoNR-by-default.patch
 cd ../..
 
 echo 'delete vendorsetup.sh from device tree once this is done'
