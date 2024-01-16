@@ -29,4 +29,11 @@ git clone https://gitlab.com/0mar99/proprietary_vendor_xiaomi_camera.git -b leic
 echo 'Cloning firmware'
 git clone --depth=1 https://gitlab.com/0mar99/vili-firmware.git -b global vendor/xiaomi/vili-firmware
 
+# Leica patch
+echo 'Adding Leica camera patch'
+cd frameworks/base
+wget https://raw.githubusercontent.com/xiaomi-haydn-devs/Patch-Haydn/14/Leicamera/0001-Add-backwards-compatible-CaptureResultExtras-constructor.patch
+patch -p1 <0001-Add-backwards-compatible-CaptureResultExtras-constructor.patch
+cd ../..
+
 echo 'delete vendorsetup.sh from device tree once this is done'
