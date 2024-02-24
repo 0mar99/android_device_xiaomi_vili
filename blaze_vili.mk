@@ -17,6 +17,8 @@ $(call inherit-product, vendor/blaze/config/common_full_phone.mk)
 # Blaze Specific
 BLAZE_BUILD_TYPE := OFFICIAL
 BLAZE_MAINTAINER := Omar
+TARGET_SUPPORTS_NEXT_GEN_ASSISTANT := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
 
 # Gapps Flags
 WITH_GAPPS := true
