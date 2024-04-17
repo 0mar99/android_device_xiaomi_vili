@@ -25,7 +25,8 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Overlays-RRO
 PRODUCT_PACKAGES += \
     ViliSettingsProviderOverlay \
-    ViliWifiOverlay
+    ViliWifiOverlay \
+    ViliNfcOverlay
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
