@@ -11,7 +11,7 @@ git clone https://github.com/0mar99/android_kernel_qcom_sm8350.git --recursive -
 # Hardware Xiaomi
 echo 'Cloning hardware xiaomi'
 rm -rf hardware/xiaomi
-git clone https://github.com/0mar99/android_hardware_xiaomi.git -b lineage-21 hardware/xiaomi
+git clone https://github.com/0mar99/android_hardware_xiaomi.git -b lineage-22 hardware/xiaomi
 
 # Vendor
 echo 'Cloning vendor tree'
