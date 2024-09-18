@@ -29,9 +29,4 @@ git clone https://github.com/Cristianlp2/memecam.git vendor/xiaomi/camera
 echo 'Cloning firmware'
 git clone --depth=1 https://gitlab.com/0mar99/vili-firmware.git -b global vendor/xiaomi/vili-firmware
 
-# Keys
-echo 'Cloning private keys'
-rm -rf vendor/blaze/signing
-git clone https://gitlab.com/0mar99/vendor_blaze_signing.git vendor/blaze/signing
-
 echo 'delete vendorsetup.sh from device tree once this is done'
