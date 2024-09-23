@@ -6,7 +6,7 @@ git clone https://github.com/0mar99/android_device_xiaomi_sm8350-common.git -b d
 
 # Kernel
 echo 'Cloning kernel'
-git clone https://github.com/0mar99/android_kernel_qcom_sm8350.git --recursive -b void-ksu kernel/xiaomi/sm8350
+git clone https://github.com/0mar99/android_kernel_xiaomi_sm8350.git --recursive -b lineage-21 kernel/xiaomi/sm8350
 
 # Hardware Xiaomi
 echo 'Cloning hardware xiaomi'
@@ -21,24 +21,18 @@ git clone https://github.com/0mar99/proprietary_vendor_xiaomi_vili.git -b lineag
 echo 'Cloning common vendor tree'
 git clone https://github.com/0mar99/proprietary_vendor_xiaomi_sm8350-common.git -b lineage-21 vendor/xiaomi/sm8350-common
 
-# Leica camera
-echo 'Cloning meme camera'
-git clone https://github.com/Cristianlp2/memecam.git vendor/xiaomi/camera
-
 # Firmware
 echo 'Cloning firmware'
 git clone --depth=1 https://gitlab.com/0mar99/vili-firmware.git -b global vendor/xiaomi/vili-firmware
 
-# Keys
-echo 'Cloning private keys'
-rm -rf vendor/derp/signing
-git clone https://gitlab.com/0mar99/vendor_derp_signing.git vendor/derp/signing
+# Display HAL (for Dolby Vision)
+echo 'Cloning custom display HAL'
+rm -rf hardware/qcom-caf/sm8350/display
+git clone https://github.com/0mar99/android_hardware_qcom_display.git -b lineage-21.0-caf-sm8350 hardware/qcom-caf/sm8350/display
 
-# Leica patch
-echo 'Adding Leica camera patch'
-cd frameworks/base
-wget https://raw.githubusercontent.com/xiaomi-haydn-devs/Patch-Haydn/14/Leicamera/0001-Add-backwards-compatible-CaptureResultExtras-constructor.patch
-patch -p1 <0001-Add-backwards-compatible-CaptureResultExtras-constructor.patch
+# Additional patches
+echo 'Adding additional patches'
+cd frameworks/av && git fetch https://github.com/0mar99/derp_frameworks_av.git && git cherry-pick b934b77202164329ed3abae523dd732dc37db4ab^..890e86b4aae143e97890670fc6769e40ff9f305a
 cd ../..
 
 echo 'delete vendorsetup.sh from device tree once this is done'
